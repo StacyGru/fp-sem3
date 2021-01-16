@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'client_side',
+    'driver_side',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,18 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'std_940',
+        'HOST': 'std-mysql',
+        'PORT': '3306',
+        'USER': 'std_940',
+        'PASSWORD': '12345678'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'carbikerental',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '',
+        # 'USER': 'root',
+        # 'PASSWORD': ''
     }
 }
 
