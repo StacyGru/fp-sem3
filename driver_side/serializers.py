@@ -1,27 +1,27 @@
 from rest_framework import serializers
-from .models import Client, Operator, Order, Ride, DiscountCard
+from .models import Driver, CarDetail, Car, Street, AvailableCar
 
-class ClientSerializer(serializers.ModelSerializer):
+class DriverSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Client
+        model = Driver
         fields = '__all__'
 
-class OperatorSerializer(serializers.ModelSerializer):
+class CarDetailSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Operator
+        model = CarDetail
         fields = '__all__'
 
-class OrderSerializer(serializers.ModelSerializer):
+class CarSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
+        model = Car
         fields = '__all__'
 
-class RideSerializer(serializers.ModelSerializer):
+class StreetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Ride
+        model = Street
         fields = '__all__'
 
-class DiscountCardSerializer(serializers.ModelSerializer):
+class AvailableCarSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DiscountCard
+        model = AvailableCar
         fields = '__all__'

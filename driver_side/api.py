@@ -1,40 +1,40 @@
 from rest_framework import viewsets, permissions
-from .models import Client, Operator, Order, Ride, DiscountCard
-from .serializer import ClientSerializer, OperatorSerializer, OrderSerializer, RideSerializer, DiscountCardSerializer
+from .models import Driver, CarDetail, Car, Street, AvailableCar
+from .serializers import DriverSerializer, CarDetailSerializer, CarSerializer, StreetSerializer, AvailableCarSerializer
 
-class ClientViewSet(viewsets.ModelViewSet):
-    queryset = Client.objects.all()
+class DriverViewSet(viewsets.ModelViewSet):
+    queryset = Driver.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = ClientSerializer
+    serializer_class = DriverSerializer
 
 
-class OperatorViewSet(viewsets.ModelViewSet):
-    queryset = Operator.objects.all()
+class CarDetailViewSet(viewsets.ModelViewSet):
+    queryset = CarDetail.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = OperatorSerializer
+    serializer_class = CarDetailSerializer
 
 
-class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.all()
+class CarViewSet(viewsets.ModelViewSet):
+    queryset = Car.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = OrderSerializer
+    serializer_class = CarSerializer
 
-class RideViewSet(viewsets.ModelViewSet):
-    queryset = Ride.objects.all()
+class StreetViewSet(viewsets.ModelViewSet):
+    queryset = Street.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = RideSerializer
+    serializer_class = StreetSerializer
 
-class DiscountCardViewSet(viewsets.ModelViewSet):
-    queryset = DiscountCard.objects.all()
+class AvailableCarViewSet(viewsets.ModelViewSet):
+    queryset = AvailableCar.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = DiscountCardSerializer
+    serializer_class = AvailableCarSerializer
