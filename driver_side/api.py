@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
-from .models import Driver, CarDetail, Car, Street, AvailableCar
-from .serializers import DriverSerializer, CarDetailSerializer, CarSerializer, StreetSerializer, AvailableCarSerializer
+from .models import Driver, ModelDetail, Car, Street, AvailableCar
+from .serializers import DriverSerializer, ModelDetailSerializer, CarSerializer, StreetSerializer, AvailableCarSerializer
 
 class DriverViewSet(viewsets.ModelViewSet):
     queryset = Driver.objects.all()
@@ -10,12 +10,12 @@ class DriverViewSet(viewsets.ModelViewSet):
     serializer_class = DriverSerializer
 
 
-class CarDetailViewSet(viewsets.ModelViewSet):
-    queryset = CarDetail.objects.all()
+class ModelDetailViewSet(viewsets.ModelViewSet):
+    queryset = ModelDetail.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = CarDetailSerializer
+    serializer_class = ModelDetailSerializer
 
 
 class CarViewSet(viewsets.ModelViewSet):

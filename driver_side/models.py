@@ -15,17 +15,17 @@ AREA_STREET_CHOICES = [
     ('западный', 'западный')
 ]
 
-GEARBOX_CARDETAIL_CHOICES = [
+GEARBOX_MODELDETAIL_CHOICES = [
     ('автомат', 'автомат'),
     ('механика', 'механика')
 ]
 
-WHEEL_SIDE_CARDETAIL_CHOICES = [
+WHEEL_SIDE_MODELDETAIL_CHOICES = [
     ('слева', 'слева'),
     ('справа', 'справа')
 ]
 
-CHILD_SEAT_CARDETAIL_CHOICES = [
+CHILD_SEAT_MODELDETAIL_CHOICES = [
     ('есть', 'есть'),
     ('нет', 'нет')
 ]
@@ -37,19 +37,19 @@ class Driver(models.Model):
     def __str__(self):
         return self.full_name
 
-class CarDetail(models.Model):
-    gearbox = models.CharField(max_length=15, choices=GEARBOX_CARDETAIL_CHOICES)
+class ModelDetail(models.Model):
+    gearbox = models.CharField(max_length=15, choices=GEARBOX_MODELDETAIL_CHOICES)
     seats = models.PositiveSmallIntegerField()
     engine = models.PositiveSmallIntegerField()
-    wheel_side = models.CharField(max_length=15, choices=WHEEL_SIDE_CARDETAIL_CHOICES)
-    child_seat = models.CharField(max_length=15, choices=CHILD_SEAT_CARDETAIL_CHOICES)
+    wheel_side = models.CharField(max_length=15, choices=WHEEL_SIDE_MODELDETAIL_CHOICES)
+    child_seat = models.CharField(max_length=15, choices=CHILD_SEAT_MODELDETAIL_CHOICES)
     def __str__(self):
         return str(self.id)
 
 class Car(models.Model):
     brand = models.CharField(max_length=150)
     model_name = models.CharField(max_length=150)
-    model_details = models.ForeignKey(CarDetail, on_delete=models.CASCADE)
+    model_details = models.ForeignKey(ModelDetail, on_delete=models.CASCADE)
     number = models.CharField(max_length=15)
     color = models.CharField(max_length=50)
     def __str__(self):

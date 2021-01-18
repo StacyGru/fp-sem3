@@ -1,14 +1,14 @@
 from rest_framework import serializers
-from .models import Driver, CarDetail, Car, Street, AvailableCar
+from .models import Driver, ModelDetail, Car, Street, AvailableCar
 
 class DriverSerializer(serializers.ModelSerializer):
     class Meta:
         model = Driver
         fields = '__all__'
 
-class CarDetailSerializer(serializers.ModelSerializer):
+class ModelDetailSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CarDetail
+        model = ModelDetail
         fields = '__all__'
 
 class CarSerializer(serializers.ModelSerializer):
