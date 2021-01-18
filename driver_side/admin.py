@@ -11,8 +11,6 @@ class DriverAdmin(ImportExportActionModelAdmin):
     list_filter = ('gender',)
     search_fields = ('id', 'full_name', 'phone')
 
-class ModelDetailAdmin(admin.ModelAdmin):
-
 class ModelDetailAdmin(ImportExportActionModelAdmin):
 
     list_display = ('id', 'gearbox', 'seats', 'engine', 'wheel_side')
