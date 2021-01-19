@@ -25,7 +25,9 @@ SECRET_KEY = '12h54m_3vvpa_=&#wa(d$v4jyc-n-78w+i1x=ukalg+knrw#j4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'fp-sem3.std-940.ist.mospolytech.ru'
+]
 
 
 # Application definition
